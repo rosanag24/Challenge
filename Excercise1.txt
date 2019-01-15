@@ -1,0 +1,65 @@
+1- Algoritmia (Tiempo máximo estimado de resolución -> 30 min)
+
+Un almacén tiene capacidad para apilar N contenedores. Cada contenedor tiene un número de identificación. Cuando se desea retirar un contenedor específico, deben retirarse primero los contenedores que están encima de él y colocarlos en otra pila, efectuar el retiro y regresarlos.
+
+Representemos a los contenedores por su identificador, es decir, un array de números, donde cada número es el identificador del contenedor. 
+
+ej: pilaDeContenedores=[1,2,3,4,5,6,7,8,9,10]
+
+
+a- Requerimos de una función retirarContenedor que nos permita retirar contenedores del tope. 
+
+Ejemplo: 
+
+Estado inicial de la pilaDeContentedores:  [1,2,3,4,5,6,7,8,9,10]
+
+Entrada: retirarContenedor(pilaDeContenedores)
+
+Salida: 10
+
+Estado final de la pilaDeContenedores: [1,2,3,4,5,6,7,8,9]
+
+
+Si retiramos un nuevo elemento
+
+
+ retirarContenedor(pilaDeContenedores)-> 9
+        pilaDeContenedores=[1,2,3,4,5,6,7,8]
+
+Funcion retirarContenedor (array[Contenedor]: arreglo_C ){
+    
+    int i = 0;
+    aux = array[Contenedor];
+    while ! arreglo_C.empty():
+cont = arreglo_C.pop();
+if !arreglo_C.empty():
+            aux.push(cont);
+arreglo_C = aux;    
+return cont;    
+}
+
+b- Requerimos de una función que nos permita apilar contenedores en la pila. 
+
+ie: apilarContenedor(12,pilaDeContenedores)->[1,2,3,4,5,6,7,8,12]
+    Proc apilarContenedor (int: n, array[Integer]: C){
+        i = n;
+        for 0<i<=n do:
+            C.push(i);
+            i = i-1;            
+}
+c- Requerimos de una función que, nos permita retirar un contenedor, desapilando los contenedores necesarios hasta dejar en el tope de la pila el requerido, y luego de retirarlo, volver a apilar los contenedores que habíamos desapilado. 
+
+Es decir, que para resolver esto debemos usar las funciones apilarContenedor y desapilarContenedor, 
+
+La idea de este ejercicio es ver como utilizan la estructuras de datos, no es necesario hacer algo rebuscado, más bien la idea es que el ejercicio sea simple y rápido de codear, si les lleva más de media hora, sospechen que algo deben estar suponiendo más complejo de lo que es. 
+    
+Proc retirarContenedor (array[Integer]: arreglo_C ,  Integer: contenedor, Integer:c){
+    
+    int i = 0;
+    for 0<=i<n do:
+        c= arreglo_C.pop();
+if c = contenedor:
+            apilarContenedor(contenedor-1, arreglo_C);
+break;
+i = i+1    
+}
