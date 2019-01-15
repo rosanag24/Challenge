@@ -26,17 +26,22 @@ Si retiramos un nuevo elemento
  retirarContenedor(pilaDeContenedores)-> 9
         pilaDeContenedores=[1,2,3,4,5,6,7,8]
 
-Funcion retirarContenedor (array[Contenedor]: arreglo_C ){
     
-    int i = 0;
-    aux = array[Contenedor];
-    while ! arreglo_C.empty():
-cont = arreglo_C.pop();
-if !arreglo_C.empty():
-            aux.push(cont);
-arreglo_C = aux;    
-return cont;    
+Funcion retirarContenedor (array[Integer]: arreglo_C){
+
+    aux = Array[Integer];
+    int c = 0;
+    while !arreglo_C.empty():
+        c = arreglo_C.pop();
+        if arreglo_C.empty():
+                break;
+                arreglo_C = aux;                    
+                return c;
+        else:
+                aux.push(c);
+    return 0; //el contenedor no existe
 }
+
 
 b- Requerimos de una función que nos permita apilar contenedores en la pila. 
 
@@ -46,7 +51,7 @@ ie: apilarContenedor(12,pilaDeContenedores)->[1,2,3,4,5,6,7,8,12]
         for 0<i<=n do:
             C.push(i);
             i = i-1;            
-}
+    }
 c- Requerimos de una función que, nos permita retirar un contenedor, desapilando los contenedores necesarios hasta dejar en el tope de la pila el requerido, y luego de retirarlo, volver a apilar los contenedores que habíamos desapilado. 
 
 Es decir, que para resolver esto debemos usar las funciones apilarContenedor y desapilarContenedor, 
@@ -56,10 +61,8 @@ La idea de este ejercicio es ver como utilizan la estructuras de datos, no es ne
 Proc retirarContenedor (array[Integer]: arreglo_C ,  Integer: contenedor, Integer:c){
     
     int i = 0;
-    for 0<=i<n do:
-        c= arreglo_C.pop();
-if c = contenedor:
-            apilarContenedor(contenedor-1, arreglo_C);
-break;
-i = i+1    
+    c = arreglo_C.pop();
+    while c!=contenedor:
+        c = desempilarContenedor(arreglo_C, contenedor); 
+    apilarContenedor(c-1, arreglo_C);
 }
