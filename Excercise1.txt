@@ -34,7 +34,6 @@ Funcion retirarContenedor (array[Integer]: arreglo_C){
     while !arreglo_C.empty():
         c = arreglo_C.pop();
         if arreglo_C.empty():
-                break;
                 arreglo_C = aux;                    
                 return c;
         else:
