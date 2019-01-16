@@ -58,8 +58,7 @@ Es decir, que para resolver esto debemos usar las funciones apilarContenedor y d
 La idea de este ejercicio es ver como utilizan la estructuras de datos, no es necesario hacer algo rebuscado, más bien la idea es que el ejercicio sea simple y rápido de codear, si les lleva más de media hora, sospechen que algo deben estar suponiendo más complejo de lo que es. 
     
 Proc retirarContenedor (array[Integer]: arreglo_C ,  Integer: contenedor, Integer:c){
-    
-    int i = 0;
+
     c = arreglo_C.pop();
     while c!=contenedor:
         c = desempilarContenedor(arreglo_C, contenedor); 
