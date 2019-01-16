@@ -1,0 +1,14 @@
+body{
+	background-image: url('math.jpeg');
+}
+
+div{
+	background-color: white;
+	margin: 50px;
+	padding-left: 30px;
+	padding-bottom: 5px;
+	padding-top: 5px; 
+}
+
+h1, p{
+	font-family: Arial, Helvetica, sans-serif;
