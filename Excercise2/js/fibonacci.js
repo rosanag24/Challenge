@@ -33,13 +33,13 @@ function lastFibonacci(){
 		alert('La serie fibonacci NO incluye numeros negativos');
 		return;
 	}
-	if (numero<2) {
+	if (numero==1) {
 		$("#fib").val(numero);
 		$("#fib_seq").val( parseInt($("#fib_seq").val())-1);
 		
 	}
 	else{
-		$("#fib_seq").val(fibonacci(numero-1));
+		$("#fib_seq").val(fibonacci(numero));
 		$("#fib").val(numero);
 	}
 	
