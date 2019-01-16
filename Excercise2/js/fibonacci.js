@@ -67,3 +67,25 @@ function nextFibonacci(){
 	}
 	
 }
+
+function currentFibonacci(){
+	var control = document.getElementById('fib');
+	var numero = parseInt(control.value);
+
+	if (isNaN(numero) && !numero==""){
+		alert('No es un valor valido');
+		return;
+	}
+	if (numero<0){
+		alert('La serie fibonacci NO incluye numeros negativos');
+		return;
+	}
+	if (numero<2) {
+		$("#fib_seq").val( parseInt($("#fib_seq").val())+1);
+		
+	}
+	else{
+		$("#fib_seq").val(fibonacci(numero-1));
+	}
+	
+}
