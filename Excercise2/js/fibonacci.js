@@ -35,11 +35,11 @@ function lastFibonacci(){
 	}
 	if (numero==1) {
 		$("#fib").val(numero);
-		$("#fib_seq").val( parseInt($("#fib_seq").val())-1);
+		$("#fib_seq").val( parseInt($("#fib").val())-1);
 		
 	}
 	else{
-		$("#fib_seq").val(fibonacci(numero));
+		$("#fib_seq").val(fibonacci(numero-1));
 		$("#fib").val(numero);
 	}
 	
